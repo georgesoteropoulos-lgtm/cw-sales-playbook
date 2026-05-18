@@ -1,0 +1,16 @@
+{
+  "name": "Cover Whale Growth Sales Playbook",
+  "short_name": "CW Playbook",
+  "description": "Internal hub for the Cover Whale Growth team — KPIs, scoreboard, portfolios, vertical playbooks.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#1E073B",
+  "background_color": "#1E073B",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

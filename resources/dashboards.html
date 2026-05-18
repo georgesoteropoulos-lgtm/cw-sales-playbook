@@ -1,14 +1,23 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Dashboards — Cover Whale Sales Playbook</title>
+<meta name="theme-color" content="#1E073B">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="CW Playbook">
+<link rel="manifest" href="../manifest.json">
+<link rel="icon" href="../icons/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
 <style>
 :root{
   --bg:#FFFFFF; --panel:#F9FAFB; --card:#EDE9FE;
   --ink:#111827; --muted:#6B7280; --line:#E5E7EB;
   --brand:#1E073B; --accent:#6D28D9; --accent-2:#8B5CF6;
   --pos:#059669; --neg:#DC2626; --warn:#D97706;
+  --surface:#FFFFFF;          /* card / table / panel surfaces */
+  --surface-hover:#FAFAFB;    /* table row hover */
   --font:'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
 }
 *{box-sizing:border-box}
@@ -45,7 +54,7 @@ h2 .count{color:var(--muted);font-weight:400;font-size:12px;margin-left:8px}
 .kpi.neg  .v{color:var(--neg)}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
 .card{
-  background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;
+  background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;
   transition:transform .12s, box-shadow .12s, border-color .12s
 }
 .card:hover{transform:translateY(-2px);box-shadow:0 6px 22px rgba(109,40,217,.10);border-color:#C4B5FD}
@@ -53,14 +62,14 @@ h2 .count{color:var(--muted);font-weight:400;font-size:12px;margin-left:8px}
 .card h3{margin:6px 0 4px;font-size:16px;color:var(--ink)}
 .card p{margin:0;color:var(--muted);font-size:13px}
 .card a{display:inline-block;margin-top:10px;font-size:13px;font-weight:600}
-table.files{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+table.files{width:100%;border-collapse:collapse;background:var(--surface);border-radius:10px;overflow:hidden;border:1px solid var(--line)}
 table.files th{
   background:var(--panel);text-align:left;padding:10px 14px;color:var(--muted);
   font-size:11px;text-transform:uppercase;letter-spacing:.5px;font-weight:600;border-bottom:1px solid var(--line)
 }
 table.files td{padding:10px 14px;border-bottom:1px solid var(--line);font-size:13px;vertical-align:middle}
 table.files tr:last-child td{border-bottom:none}
-table.files tr:hover td{background:#FAFAFB}
+table.files tr:hover td{background:var(--surface-hover)}
 .tag{
   display:inline-block;padding:2px 8px;border-radius:4px;background:#EDE9FE;
   color:var(--accent);font-size:10px;font-weight:700;letter-spacing:.4px;margin-right:8px;font-family:monospace
@@ -74,8 +83,8 @@ table.files tr:hover td{background:#FAFAFB}
 }
 .empty .big{font-size:32px;margin-bottom:8px;color:var(--accent-2)}
 .searchbox{
-  margin-bottom:14px;padding:10px 12px;background:#fff;border:1px solid var(--line);
-  border-radius:8px;width:100%;font-size:14px;font-family:var(--font)
+  margin-bottom:14px;padding:10px 12px;background:var(--surface);border:1px solid var(--line);
+  border-radius:8px;width:100%;font-size:14px;font-family:var(--font);color:var(--ink)
 }
 .searchbox:focus{outline:2px solid var(--accent-2);border-color:transparent}
 .tool-launcher{
@@ -98,7 +107,7 @@ table.files tr:hover td{background:#FAFAFB}
 .tool-row .tool-launcher{margin:0}
 .home-grid{display:grid;grid-template-columns:2fr 1fr;gap:18px;margin-bottom:28px}
 @media (max-width:900px){.home-grid{grid-template-columns:1fr}}
-.panel{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
 .panel h2{margin:0 0 10px}
 .panel .panel-foot{margin-top:10px;font-size:12px}
 table.leaderboard{width:100%;border-collapse:collapse;font-size:13px}
@@ -201,19 +210,76 @@ table.leaderboard .delta.flat{color:var(--muted)}
   table.leaderboard{font-size:12px}
   table.leaderboard td,table.leaderboard th{padding:6px 4px}
   table.leaderboard .role{font-size:9px;padding:1px 4px;margin-left:4px}
-  .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
-  table.files{font-size:12px;min-width:520px}
-  table.files th,table.files td{padding:8px 10px}
+  /* File table → stacked cards on mobile (no more horizontal scroll) */
+  .table-scroll{overflow:visible}
+  table.files{
+    display:block;background:transparent;border:0;min-width:0;
+    border-radius:0;overflow:visible
+  }
+  table.files thead{display:none}
+  table.files tbody{display:block}
+  table.files tr{
+    display:block;background:var(--surface);
+    border:1px solid var(--line);border-radius:10px;
+    margin-bottom:10px;padding:12px 14px
+  }
+  table.files tr:hover td{background:transparent}
+  table.files td{display:block;padding:0;border:0}
+  table.files td:first-child{
+    font-weight:600;font-size:14px;color:var(--ink);margin-bottom:6px;
+    word-break:break-word
+  }
+  table.files td:nth-child(2),table.files td:nth-child(3){
+    display:inline-block;margin-right:14px;color:var(--muted);font-size:11px
+  }
+  table.files td:nth-child(2):before{content:"Updated  ";color:var(--muted);opacity:.7}
+  table.files td:nth-child(3):before{content:"Size  ";color:var(--muted);opacity:.7}
+  table.files td.actions{margin-top:10px}
   /* Tap-friendly Open button — 44px effective hit area */
   .actions a{
-    display:inline-block;padding:8px 14px;border-radius:6px;
+    display:inline-block;padding:9px 16px;border-radius:6px;
     background:var(--card);color:var(--accent);
-    font-size:12px;font-weight:700;margin-left:0;text-decoration:none
+    font-size:13px;font-weight:700;margin-left:0;text-decoration:none
   }
   .actions a:active{background:#DDD6FE}
   /* iOS Safari auto-zooms inputs <16px on focus — bump to prevent that */
   .searchbox{font-size:16px}
   footer{padding:18px 12px;font-size:10px}
+}
+
+/* ── Dark mode (auto, follows system preference) ─────────────────────────── */
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0F0A1F; --panel:#181028; --card:#241836;
+    --ink:#F3F4F6; --muted:#9CA3AF; --line:#2D1F4D;
+    --brand:#2A0F4F; --accent:#A78BFA; --accent-2:#C4B5FD;
+    --surface:#181028; --surface-hover:#1F1432;
+  }
+  body{background:var(--bg);color:var(--ink)}
+  table.files th{background:#1F1432;color:var(--muted)}
+  .card:hover{box-shadow:0 6px 22px rgba(167,139,250,.18);border-color:#4C1D95}
+  .top-mover{background:linear-gradient(135deg,#1F1432,#2D1B4F);border-color:#4C1D95}
+  .top-mover .mover-name,.top-mover .eyebrow{color:#E9D5FF}
+  .top-mover .mover-detail{color:#C4B5FD}
+  .focus-card{background:linear-gradient(135deg,#3F2E0E,#5A4218);border-color:#92400E}
+  .focus-card .eyebrow,.focus-card h3,.focus-card p{color:#FCD34D}
+  .hot-streak-panel{background:linear-gradient(135deg,#2A1810,#3D2415);border-color:#9A3412}
+  .hot-streak-panel h2,.hot-streak-panel h2 .count,.streak-list .streak-name,.streak-list .streak-weeks{color:#FED7AA}
+  .streak-list li{border-bottom-color:rgba(254,215,170,.15)}
+  .streak-list .streak-role{background:rgba(254,215,170,.15);color:#FED7AA}
+  table.leaderboard td{border-bottom-color:var(--line)}
+  table.leaderboard .role.bdm{background:#2D1B4F;color:#C4B5FD}
+  table.leaderboard .role.bda{background:#063B2D;color:#6EE7B7}
+  table.leaderboard .score{color:var(--ink)}
+  .kpi{background:#241836;border-color:#3B2566}
+  .recent-list li,.appt-list li,.month-leaders li{border-bottom-color:var(--line)}
+  .actions a{background:#2D1B4F;color:#C4B5FD}
+  .actions a:active{background:#3B2566}
+  table.files th,table.files td{color:var(--ink)}
+  table.files td.muted,.actions a.sec{color:var(--muted)}
+  footer{border-top-color:var(--line);color:var(--muted)}
+  /* Brand bar stays dark in both modes — adjust contrast */
+  header.bar{background:#15082E;box-shadow:0 1px 4px rgba(0,0,0,.4)}
 }
 footer{padding:24px;text-align:center;color:var(--muted);font-size:11px;border-top:1px solid var(--line);margin-top:40px}
 
@@ -261,7 +327,7 @@ footer{padding:24px;text-align:center;color:var(--muted);font-size:11px;border-t
 <header class="bar">
   <div class="brand">Cover Whale &middot; Growth Sales Playbook</div>
   <nav><a href="../index.html" class="">Home</a><a href="../resources/dashboards.html" class="active">Scoreboard</a><a href="../verticals/retail.html" class="">Retail</a><a href="../verticals/national_partners.html" class="">National Partners</a><a href="../verticals/networks.html" class="">Networks</a><a href="../verticals/fleet.html" class="">Fleet</a><a href="../resources/agency_appointments.html" class="">Agency Appointments</a><a href="../resources/portfolios.html" class="">Portfolios</a><a href="../resources/marketing.html" class="">Marketing</a><a href="../resources/onboarding.html" class="">New Hire Onboarding</a><a href="../resources/reference.html" class="">Reference</a></nav>
-  <div class="meta">Built May 18, 2026 04:35 PM</div>
+  <div class="meta">Built May 18, 2026 04:44 PM</div>
 </header>
 <main class="wrap">
 <h1>Dashboards &amp; Live Reports</h1>
