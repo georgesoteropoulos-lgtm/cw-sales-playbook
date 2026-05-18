@@ -1,0 +1,30 @@
+# OS / Windows
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# macOS (in case anyone clones on a Mac)
+.DS_Store
+
+# Google Drive temp files
+*.tmp
+~$*
+*.crdownload
+.tmp.drivedownload
+.tmp.driveupload
+
+# Google Drive shortcut/link files (not real content)
+*.gdoc
+*.gsheet
+*.gslides
+*.gdraw
+*.gform
+*.gnote
+*.glink
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*~
+*.bak

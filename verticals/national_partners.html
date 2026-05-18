@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>National Partners — Cover Whale Sales Playbook</title>
+<style>
+:root{
+  --bg:#FFFFFF; --panel:#F9FAFB; --card:#EDE9FE;
+  --ink:#111827; --muted:#6B7280; --line:#E5E7EB;
+  --brand:#1E073B; --accent:#6D28D9; --accent-2:#8B5CF6;
+  --pos:#059669; --neg:#DC2626; --warn:#D97706;
+  --font:'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:14px;line-height:1.5}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+header.bar{
+  background:var(--brand);color:#fff;padding:14px 24px;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  position:sticky;top:0;z-index:10;box-shadow:0 1px 4px rgba(0,0,0,.08)
+}
+.bar .brand{font-weight:700;font-size:17px;letter-spacing:.5px}
+.bar nav{display:flex;gap:6px;flex-wrap:wrap}
+.bar nav a{
+  color:#E9D5FF;padding:6px 10px;border-radius:6px;font-size:13px;font-weight:500
+}
+.bar nav a:hover{background:rgba(255,255,255,.08);text-decoration:none;color:#fff}
+.bar nav a.active{background:rgba(255,255,255,.15);color:#fff}
+.bar .meta{color:#C4B5FD;font-size:11px}
+.wrap{max-width:1280px;margin:0 auto;padding:24px}
+h1{font-size:24px;margin:6px 0 4px}
+h2{font-size:17px;margin:28px 0 12px;color:var(--brand)}
+h2 .count{color:var(--muted);font-weight:400;font-size:12px;margin-left:8px}
+.sub{color:var(--muted);font-size:13px;margin-bottom:18px}
+.kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-bottom:24px}
+.kpi{
+  background:var(--card);border-radius:10px;padding:14px 16px;
+  display:flex;flex-direction:column;gap:2px;border:1px solid #DDD6FE
+}
+.kpi .v{font-size:22px;font-weight:700;color:var(--accent)}
+.kpi .l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.4px}
+.kpi.warn .v{color:var(--warn)}
+.kpi.pos  .v{color:var(--pos)}
+.kpi.neg  .v{color:var(--neg)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.card{
+  background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;
+  transition:transform .12s, box-shadow .12s, border-color .12s
+}
+.card:hover{transform:translateY(-2px);box-shadow:0 6px 22px rgba(109,40,217,.10);border-color:#C4B5FD}
+.card .eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:var(--accent);font-weight:600}
+.card h3{margin:6px 0 4px;font-size:16px;color:var(--ink)}
+.card p{margin:0;color:var(--muted);font-size:13px}
+.card a{display:inline-block;margin-top:10px;font-size:13px;font-weight:600}
+table.files{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+table.files th{
+  background:var(--panel);text-align:left;padding:10px 14px;color:var(--muted);
+  font-size:11px;text-transform:uppercase;letter-spacing:.5px;font-weight:600;border-bottom:1px solid var(--line)
+}
+table.files td{padding:10px 14px;border-bottom:1px solid var(--line);font-size:13px;vertical-align:middle}
+table.files tr:last-child td{border-bottom:none}
+table.files tr:hover td{background:#FAFAFB}
+.tag{
+  display:inline-block;padding:2px 8px;border-radius:4px;background:#EDE9FE;
+  color:var(--accent);font-size:10px;font-weight:700;letter-spacing:.4px;margin-right:8px;font-family:monospace
+}
+.muted{color:var(--muted);font-size:12px}
+.actions a{margin-left:10px;font-size:12px;font-weight:600;color:var(--accent)}
+.actions a.sec{color:var(--muted)}
+.empty{
+  text-align:center;padding:48px 24px;color:var(--muted);
+  background:var(--panel);border:1px dashed var(--line);border-radius:12px
+}
+.empty .big{font-size:32px;margin-bottom:8px;color:var(--accent-2)}
+.searchbox{
+  margin-bottom:14px;padding:10px 12px;background:#fff;border:1px solid var(--line);
+  border-radius:8px;width:100%;font-size:14px;font-family:var(--font)
+}
+.searchbox:focus{outline:2px solid var(--accent-2);border-color:transparent}
+.tool-launcher{
+  display:flex;align-items:center;justify-content:space-between;gap:18px;
+  margin:8px 0 28px;padding:16px 20px;border-radius:12px;
+  background:linear-gradient(135deg,#1E073B,#4C1D95);color:#fff;
+  box-shadow:0 4px 18px rgba(109,40,217,.18);text-decoration:none
+}
+.tool-launcher:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(109,40,217,.28);text-decoration:none}
+.tool-launcher .tl-text{display:flex;flex-direction:column;gap:2px;min-width:0}
+.tool-launcher .tl-text .eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:.6px;color:#C4B5FD;font-weight:600}
+.tool-launcher .tl-text h3{margin:0;font-size:16px;font-weight:700;color:#fff}
+.tool-launcher .tl-text p{margin:2px 0 0;font-size:12px;color:#E9D5FF}
+.tool-launcher .tl-cta{
+  background:#fff;color:#4C1D95;font-weight:700;font-size:12px;
+  padding:8px 14px;border-radius:8px;white-space:nowrap
+}
+.tool-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:8px 0 28px}
+@media (max-width:760px){.tool-row{grid-template-columns:1fr}}
+.tool-row .tool-launcher{margin:0}
+.home-grid{display:grid;grid-template-columns:2fr 1fr;gap:18px;margin-bottom:28px}
+@media (max-width:900px){.home-grid{grid-template-columns:1fr}}
+.panel{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.panel h2{margin:0 0 10px}
+.panel .panel-foot{margin-top:10px;font-size:12px}
+table.leaderboard{width:100%;border-collapse:collapse;font-size:13px}
+table.leaderboard th{
+  text-align:left;padding:8px 6px;color:var(--muted);font-size:11px;
+  text-transform:uppercase;letter-spacing:.4px;font-weight:600;border-bottom:1px solid var(--line)
+}
+table.leaderboard td{padding:8px 6px;border-bottom:1px solid #F3F4F6}
+table.leaderboard tr:last-child td{border-bottom:0}
+table.leaderboard .rank{color:var(--muted);font-weight:700;width:28px;text-align:center}
+table.leaderboard .name{font-weight:600}
+table.leaderboard .role{
+  display:inline-block;font-size:10px;padding:1px 6px;border-radius:4px;margin-left:6px;
+  font-weight:700;letter-spacing:.4px;text-transform:uppercase
+}
+table.leaderboard .role.bdm{background:#EDE9FE;color:#4C1D95}
+table.leaderboard .role.bda{background:#D1FAE5;color:#065F46}
+table.leaderboard .score{font-weight:700;color:var(--brand);text-align:right}
+table.leaderboard .delta{font-size:11px;font-weight:600;text-align:right;white-space:nowrap}
+table.leaderboard .delta.up{color:var(--pos)}
+table.leaderboard .delta.down{color:var(--neg)}
+table.leaderboard .delta.flat{color:var(--muted)}
+.top-mover{
+  background:linear-gradient(135deg,#F5F3FF,#EDE9FE);border:1px solid #C4B5FD;
+  border-radius:12px;padding:16px 18px;margin-bottom:18px
+}
+.top-mover .eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:.6px;color:var(--accent);font-weight:600}
+.top-mover .mover-name{font-size:20px;font-weight:700;color:var(--brand);margin:4px 0 2px}
+.top-mover .mover-detail{font-size:12px;color:var(--muted)}
+.top-mover .mover-delta{font-size:28px;font-weight:800;color:var(--pos);float:right;margin-top:-6px}
+.recent-list{list-style:none;margin:0;padding:0}
+.recent-list li{padding:8px 0;border-bottom:1px solid #F3F4F6;font-size:13px}
+.recent-list li:last-child{border-bottom:0}
+.recent-list .tag{margin-right:6px}
+.recent-list .when{color:var(--muted);font-size:11px;margin-left:8px}
+.focus-card{
+  background:linear-gradient(135deg,#FEF3C7,#FDE68A);border:1px solid #FCD34D;
+  border-radius:12px;padding:14px 18px;margin-bottom:18px
+}
+.focus-card .eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:.6px;color:#92400E;font-weight:700}
+.focus-card h3{margin:4px 0 4px;font-size:15px;color:#78350F}
+.focus-card p{margin:0;font-size:13px;color:#78350F}
+.appt-list{list-style:none;margin:0;padding:0}
+.appt-list li{padding:8px 0;border-bottom:1px solid #F3F4F6}
+.appt-list li:last-child{border-bottom:0}
+.appt-list .appt-name{font-size:13px;font-weight:600;color:var(--ink)}
+.appt-list .appt-meta{font-size:11px;color:var(--muted);margin-top:2px}
+.appt-list .appt-when{color:var(--accent);font-weight:600}
+.hot-streak-panel{background:linear-gradient(135deg,#FFF7ED,#FED7AA);border:1px solid #FDBA74;padding:14px 18px}
+.hot-streak-panel h2{color:#7C2D12}
+.hot-streak-panel h2 .count{color:#9A3412}
+.streak-list{list-style:none;margin:0;padding:0}
+.streak-list li{padding:8px 0;border-bottom:1px solid rgba(154,52,18,0.15);display:flex;justify-content:space-between;align-items:center;gap:10px}
+.streak-list li:last-child{border-bottom:0}
+.streak-list .streak-name{font-size:13px;font-weight:600;color:#7C2D12}
+.streak-list .streak-role{display:inline-block;font-size:9px;padding:1px 5px;border-radius:4px;background:rgba(124,45,18,0.12);color:#7C2D12;font-weight:700;letter-spacing:.4px;margin-left:4px;vertical-align:middle}
+.streak-list .streak-weeks{font-size:11px;font-weight:700;color:#9A3412;white-space:nowrap}
+.month-leaders-panel h2 .count{color:var(--muted);font-weight:400}
+.month-leaders{list-style:none;margin:0;padding:0}
+.month-leaders li{padding:6px 0;border-bottom:1px solid #F3F4F6;display:flex;align-items:center;gap:10px;font-size:13px}
+.month-leaders li:last-child{border-bottom:0}
+.month-leaders .ml-rank{color:var(--muted);font-weight:700;width:22px;text-align:center}
+.month-leaders .ml-name{flex:1;font-weight:600;color:var(--ink)}
+.month-leaders .ml-count{font-weight:700;color:var(--accent)}
+
+/* Mobile / tablet */
+@media (max-width:760px){
+  html,body{font-size:15px}
+  .wrap{padding:14px}
+  header.bar{
+    padding:10px 12px;flex-wrap:wrap;gap:8px;
+    align-items:flex-start
+  }
+  header.bar .brand{font-size:14px;flex:1 1 auto}
+  header.bar .meta{display:none}
+  header.bar nav{
+    order:3;flex:1 1 100%;
+    flex-wrap:nowrap;overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    margin:0 -12px;padding:4px 12px 2px;
+    scrollbar-width:none
+  }
+  header.bar nav::-webkit-scrollbar{display:none}
+  header.bar nav a{white-space:nowrap;font-size:12px;padding:6px 10px}
+  h1{font-size:20px}
+  h2{font-size:15px;margin:22px 0 10px}
+  .kpi-row{grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:18px}
+  .kpi{padding:10px 12px}
+  .kpi .v{font-size:18px}
+  .kpi .l{font-size:10px}
+  .cards{grid-template-columns:1fr;gap:10px}
+  .card{padding:14px}
+  .tool-row{gap:10px;margin:6px 0 22px}
+  .tool-launcher{padding:14px;gap:12px}
+  .tool-launcher .tl-text h3{font-size:15px}
+  .tool-launcher .tl-text p{font-size:11px}
+  .tool-launcher .tl-cta{font-size:11px;padding:6px 10px}
+  .top-mover .mover-delta{font-size:22px}
+  .top-mover .mover-name{font-size:17px}
+  table.leaderboard{font-size:12px}
+  table.leaderboard td,table.leaderboard th{padding:6px 4px}
+  table.leaderboard .role{font-size:9px;padding:1px 4px;margin-left:4px}
+  .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  table.files{font-size:12px;min-width:520px}
+  table.files th,table.files td{padding:8px 10px}
+  .actions a{margin-left:6px;font-size:11px}
+  /* On mobile, file:// links won't resolve (no Drive for Desktop). Hide
+     the local Open link and promote Open in Drive as the primary action. */
+  .actions a.open-local{display:none}
+  .actions a.open-drive{color:var(--accent);margin-left:0}
+  footer{padding:18px 12px;font-size:10px}
+}
+footer{padding:24px;text-align:center;color:var(--muted);font-size:11px;border-top:1px solid var(--line);margin-top:40px}
+
+
+#cw-gate{position:fixed;inset:0;background:#1E073B;color:#fff;z-index:9999;display:flex;align-items:center;justify-content:center;font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif}
+#cw-gate.hidden{display:none}
+#cw-gate .box{max-width:380px;width:90%;text-align:center;padding:36px 28px;background:rgba(255,255,255,.04);border:1px solid rgba(196,181,253,.2);border-radius:14px}
+#cw-gate .logo{font-size:13px;letter-spacing:3px;color:#C4B5FD;text-transform:uppercase;margin-bottom:6px;font-weight:600}
+#cw-gate h1{font-size:22px;margin:0 0 6px;font-weight:600}
+#cw-gate .sub{color:#C4B5FD;font-size:13px;margin-bottom:24px}
+#cw-gate .verifying{color:#C4B5FD;font-size:13px;margin:18px 0 0;display:none}
+#cw-gate.checking .form{display:none}
+#cw-gate.checking .verifying{display:block}
+#cw-gate input[type=password]{width:100%;padding:11px 14px;background:#fff;color:#1E073B;border:none;border-radius:8px;font-size:14px;font-family:inherit;margin-bottom:10px;box-sizing:border-box}
+#cw-gate input[type=password]:focus{outline:2px solid #8B5CF6}
+#cw-gate button{width:100%;padding:11px 14px;background:#6D28D9;color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit}
+#cw-gate button:hover{background:#8B5CF6}
+#cw-gate .err{color:#FCA5A5;font-size:12px;margin-top:10px;min-height:16px}
+#cw-gate .foot{color:#7C6FA8;font-size:10px;margin-top:18px;letter-spacing:.4px}
+</style>
+</head>
+<body>
+
+<div id="cw-gate">
+  <div class="box">
+    <div class="logo">Cover Whale</div>
+    <h1>Growth Sales Playbook</h1>
+    <div class="sub">Internal access only</div>
+    <div class="form">
+      <input id="cw-gate-pw" type="password" placeholder="Access code" autocomplete="off" autofocus>
+      <button id="cw-gate-go">Enter</button>
+      <div class="err" id="cw-gate-err"></div>
+    </div>
+    <div class="verifying">Verifying Cover Whale credentials...</div>
+    <div class="foot">Cosmetic gate &middot; not a replacement for real auth</div>
+  </div>
+</div>
+
+<header class="bar">
+  <div class="brand">Cover Whale &middot; Growth Sales Playbook</div>
+  <nav><a href="../index.html" class="">Home</a><a href="../resources/dashboards.html" class="">Scoreboard</a><a href="../verticals/retail.html" class="">Retail</a><a href="../verticals/national_partners.html" class="active">National Partners</a><a href="../verticals/networks.html" class="">Networks</a><a href="../verticals/fleet.html" class="">Fleet</a><a href="../resources/agency_appointments.html" class="">Agency Appointments</a><a href="../resources/portfolios.html" class="">Portfolios</a><a href="../resources/marketing.html" class="">Marketing</a><a href="../resources/onboarding.html" class="">New Hire Onboarding</a><a href="../resources/reference.html" class="">Reference</a></nav>
+  <div class="meta">Built May 18, 2026 03:50 PM</div>
+</header>
+<main class="wrap">
+<h1>National Partners</h1>
+<p class="sub">Curated decks, scorecards, and collateral for the National Partners channel. Drop files into <code>content/National Partners/</code> on Drive to add them here — the playbook rebuilds nightly.</p>
+<h2>All National Partners resources</h2><div class="empty"><div class="big">~</div>Drop National Partners-specific decks, scorecards, or collateral into the Drive folder <code>Sales Playbook/content/National Partners</code>.</div>
+</main>
+<footer>Cover Whale Growth Team &middot; Built by build_playbook.py &middot; Refreshed daily at 5 AM CT</footer>
+<script>
+function _filter(inputId, tableId){
+  var q = (document.getElementById(inputId).value || '').toLowerCase();
+  var rows = document.querySelectorAll('#'+tableId+' tbody tr');
+  rows.forEach(function(r){
+    r.style.display = r.textContent.toLowerCase().indexOf(q) === -1 ? 'none' : '';
+  });
+}
+
+
+(function(){
+  var KEY='cw-gate-ok-v1';
+  var PW="coverwhale";
+  var g=document.getElementById('cw-gate');
+  function unlock(){g.classList.add('hidden');try{localStorage.setItem(KEY,'1')}catch(e){}}
+  try{if(localStorage.getItem(KEY)==='1'){unlock();return}}catch(e){}
+  var btn=document.getElementById('cw-gate-go');
+  var pw=document.getElementById('cw-gate-pw');
+  var err=document.getElementById('cw-gate-err');
+  function check(){
+    var v=(pw.value||'').trim().toLowerCase();
+    if(v===PW){g.classList.add('checking');setTimeout(unlock,650)}
+    else{err.textContent='Incorrect code';pw.select()}
+  }
+  btn.addEventListener('click',check);
+  pw.addEventListener('keydown',function(e){if(e.key==='Enter')check()});
+})();
+</script>
+</body></html>

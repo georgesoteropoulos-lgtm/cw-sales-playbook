@@ -1,0 +1,20 @@
+# Auto-detect text files and normalize line endings on commit
+* text=auto
+
+# Binary file types — never apply line-ending conversion
+*.pdf  binary
+*.pptx binary
+*.ppt  binary
+*.docx binary
+*.doc  binary
+*.xlsx binary
+*.xls  binary
+*.csv  binary
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.ico  binary
+*.zip  binary
+*.7z   binary
+*.gz   binary
