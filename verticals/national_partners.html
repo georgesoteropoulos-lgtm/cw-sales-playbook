@@ -204,11 +204,15 @@ table.leaderboard .delta.flat{color:var(--muted)}
   .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
   table.files{font-size:12px;min-width:520px}
   table.files th,table.files td{padding:8px 10px}
-  .actions a{margin-left:6px;font-size:11px}
-  /* On mobile, file:// links won't resolve (no Drive for Desktop). Hide
-     the local Open link and promote Open in Drive as the primary action. */
-  .actions a.open-local{display:none}
-  .actions a.open-drive{color:var(--accent);margin-left:0}
+  /* Tap-friendly Open button — 44px effective hit area */
+  .actions a{
+    display:inline-block;padding:8px 14px;border-radius:6px;
+    background:var(--card);color:var(--accent);
+    font-size:12px;font-weight:700;margin-left:0;text-decoration:none
+  }
+  .actions a:active{background:#DDD6FE}
+  /* iOS Safari auto-zooms inputs <16px on focus — bump to prevent that */
+  .searchbox{font-size:16px}
   footer{padding:18px 12px;font-size:10px}
 }
 footer{padding:24px;text-align:center;color:var(--muted);font-size:11px;border-top:1px solid var(--line);margin-top:40px}
@@ -229,6 +233,12 @@ footer{padding:24px;text-align:center;color:var(--muted);font-size:11px;border-t
 #cw-gate button:hover{background:#8B5CF6}
 #cw-gate .err{color:#FCA5A5;font-size:12px;margin-top:10px;min-height:16px}
 #cw-gate .foot{color:#7C6FA8;font-size:10px;margin-top:18px;letter-spacing:.4px}
+@media (max-width:760px){
+  /* Prevent iOS Safari auto-zoom on input focus */
+  #cw-gate input[type=password]{font-size:16px}
+  #cw-gate button{font-size:15px;padding:13px 14px}
+  #cw-gate .box{padding:28px 22px}
+}
 </style>
 </head>
 <body>
@@ -251,7 +261,7 @@ footer{padding:24px;text-align:center;color:var(--muted);font-size:11px;border-t
 <header class="bar">
   <div class="brand">Cover Whale &middot; Growth Sales Playbook</div>
   <nav><a href="../index.html" class="">Home</a><a href="../resources/dashboards.html" class="">Scoreboard</a><a href="../verticals/retail.html" class="">Retail</a><a href="../verticals/national_partners.html" class="active">National Partners</a><a href="../verticals/networks.html" class="">Networks</a><a href="../verticals/fleet.html" class="">Fleet</a><a href="../resources/agency_appointments.html" class="">Agency Appointments</a><a href="../resources/portfolios.html" class="">Portfolios</a><a href="../resources/marketing.html" class="">Marketing</a><a href="../resources/onboarding.html" class="">New Hire Onboarding</a><a href="../resources/reference.html" class="">Reference</a></nav>
-  <div class="meta">Built May 18, 2026 04:31 PM</div>
+  <div class="meta">Built May 18, 2026 04:35 PM</div>
 </header>
 <main class="wrap">
 <h1>National Partners</h1>
