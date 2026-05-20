@@ -144,6 +144,36 @@ table.leaderboard .delta.flat{color:var(--muted)}
 .recent-list li:last-child{border-bottom:0}
 .recent-list .tag{margin-right:6px}
 .recent-list .when{color:var(--muted);font-size:11px;margin-left:8px}
+/* ── Industry Brief (pulled from Cory's daily) ──────────────────────────── */
+.brief-row{display:grid;grid-template-columns:2fr 1fr;gap:14px;margin:0 0 24px;position:relative}
+.brief-card{
+  background:linear-gradient(135deg,#F5F3FF 0%,#EDE9FE 100%);
+  border:1px solid #C4B5FD;border-radius:12px;padding:16px 18px;
+  font-size:13.5px;line-height:1.55;color:#1F2937;min-width:0
+}
+.brief-card .brief-eyebrow{
+  font-size:10px;text-transform:uppercase;letter-spacing:1.2px;
+  color:#6D28D9;font-weight:800;margin-bottom:6px
+}
+.brief-card .brief-body{word-wrap:break-word}
+.brief-card .brief-body strong{color:#5B21B6}
+.brief-card .down{color:var(--neg);font-weight:700}
+.brief-card .up{color:var(--pos);font-weight:700}
+.brief-card--pulse{background:linear-gradient(135deg,#1E073B 0%,#4C1D95 100%);border-color:#8B5CF6;color:#fff}
+.brief-card--pulse .brief-eyebrow{color:#FBBF24}
+.brief-card--pulse .brief-body strong{color:#FBBF24}
+.brief-card--pulse .down{color:#FCA5A5}
+.brief-card--pulse .up{color:#86EFAC}
+.brief-attrib{
+  grid-column:1 / -1;font-size:10.5px;color:var(--muted);text-align:right;
+  margin-top:-12px;letter-spacing:.3px
+}
+@media (max-width:760px){.brief-row{grid-template-columns:1fr}}
+@media (prefers-color-scheme: dark){
+  .brief-card{background:linear-gradient(135deg,#241836 0%,#181028 100%);border-color:#3B2566;color:var(--ink)}
+  .brief-card .brief-body strong{color:#C4B5FD}
+}
+
 /* ── Cover Whale Championship Belts ─────────────────────────────────────── */
 .belts-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:8px 0 24px}
 .belt-card{
@@ -385,7 +415,7 @@ footer{padding:24px;text-align:center;color:var(--muted);font-size:11px;border-t
 <header class="bar">
   <div class="brand">Cover Whale &middot; Growth Sales Playbook</div>
   <nav><a href="../index.html" class="">Home</a><a href="../resources/dashboards.html" class="">Scoreboard</a><a href="../resources/distribution.html" class="">Distribution</a><a href="../verticals/retail.html" class="">Retail</a><a href="../verticals/national_partners.html" class="">National Partners</a><a href="../verticals/networks.html" class="active">Networks</a><a href="../verticals/fleet.html" class="">Fleet</a><a href="../resources/agency_appointments.html" class="">Agency Appointments</a><a href="../resources/portfolios.html" class="">Portfolios</a><a href="../resources/marketing.html" class="">Marketing</a><a href="../resources/onboarding.html" class="">New Hire Onboarding</a><a href="../resources/reference.html" class="">Reference</a></nav>
-  <div class="meta">Built May 20, 2026 10:54 AM</div>
+  <div class="meta">Built May 20, 2026 11:05 AM</div>
 </header>
 <main class="wrap">
 <h1>Networks</h1>
