@@ -160,13 +160,11 @@ table.leaderboard .delta.flat{color:var(--muted)}
 .belt-card::before{top:0}
 .belt-card::after{bottom:0}
 .belt-medallion{
-  flex:0 0 auto;width:62px;height:62px;border-radius:50%;
-  background:radial-gradient(circle at 30% 30%,#FEF3C7 0%,#FBBF24 35%,#92400E 100%);
+  flex:0 0 auto;width:108px;height:54px;
   display:flex;align-items:center;justify-content:center;
-  font-weight:900;color:#5B3D02;font-size:18px;letter-spacing:.5px;
-  box-shadow:inset 0 0 14px rgba(0,0,0,.4),0 2px 10px rgba(0,0,0,.35);
-  border:2px solid #FBBF24
+  filter:drop-shadow(0 2px 6px rgba(0,0,0,.35))
 }
+.belt-medallion svg{width:100%;height:100%;display:block}
 .belt-info{flex:1;min-width:0}
 .belt-eyebrow{
   font-size:10px;text-transform:uppercase;letter-spacing:1.4px;
@@ -186,9 +184,7 @@ table.leaderboard .delta.flat{color:var(--muted)}
   opacity:.5
 }
 .belt-card--vacant .belt-medallion{
-  background:radial-gradient(circle at 30% 30%,#4B5563 0%,#1F2937 100%);
-  color:#9CA3AF;border-color:#4B5563;
-  box-shadow:inset 0 0 12px rgba(0,0,0,.5)
+  filter:grayscale(1) brightness(.55) drop-shadow(0 2px 4px rgba(0,0,0,.3))
 }
 .belt-card--vacant .belt-eyebrow{color:#9CA3AF}
 .belt-card--vacant .belt-name{color:#D1D5DB;font-weight:700;font-style:italic}
@@ -227,7 +223,7 @@ table.leaderboard .delta.flat{color:var(--muted)}
 @media (max-width:760px){
   .belts-row{grid-template-columns:1fr;gap:10px;margin:6px 0 18px}
   .belt-card{padding:16px 18px;gap:14px}
-  .belt-medallion{width:52px;height:52px;font-size:15px}
+  .belt-medallion{width:90px;height:45px}
   .belt-name{font-size:18px}
   html,body{font-size:15px}
   .wrap{padding:14px}
@@ -381,7 +377,7 @@ footer{padding:24px;text-align:center;color:var(--muted);font-size:11px;border-t
 <header class="bar">
   <div class="brand">Cover Whale &middot; Growth Sales Playbook</div>
   <nav><a href="index.html" class="active">Home</a><a href="resources/dashboards.html" class="">Scoreboard</a><a href="verticals/retail.html" class="">Retail</a><a href="verticals/national_partners.html" class="">National Partners</a><a href="verticals/networks.html" class="">Networks</a><a href="verticals/fleet.html" class="">Fleet</a><a href="resources/agency_appointments.html" class="">Agency Appointments</a><a href="resources/portfolios.html" class="">Portfolios</a><a href="resources/marketing.html" class="">Marketing</a><a href="resources/onboarding.html" class="">New Hire Onboarding</a><a href="resources/reference.html" class="">Reference</a></nav>
-  <div class="meta">Built May 20, 2026 10:33 AM</div>
+  <div class="meta">Built May 20, 2026 10:36 AM</div>
 </header>
 <main class="wrap">
 <h1>Growth Sales Playbook</h1><p class="sub">Internal hub for the Cover Whale Growth Team — verticals, dashboards, and shared collateral.</p>
@@ -395,7 +391,95 @@ footer{padding:24px;text-align:center;color:var(--muted);font-size:11px;border-t
   <div class="kpi"><div class="v">50 / 91</div><div class="l">Q2 Days Elapsed</div></div>
 </div>
 <p class="sub">Live numbers pulled from the team scoreboard — built 2026-05-20. Refreshes daily at 5 AM CT.</p>
-<div class="belts-row"><div class="belt-card"><div class="belt-medallion">CW</div><div class="belt-info"><div class="belt-eyebrow">Champion</div><div class="belt-name">Derek Janssen</div><div class="belt-meta">Q1 2026</div></div></div><div class="belt-card belt-card--vacant"><div class="belt-medallion">CW</div><div class="belt-info"><div class="belt-eyebrow">Cover Whale Belt #2</div><div class="belt-name">Up for grabs</div><div class="belt-meta">Criteria TBD</div></div></div></div><div class="focus-card"><div class="eyebrow">This Week's Focus</div><h3>Q2 close — 47 days left</h3><p>Activity sits at 80% of goal and Q2 appointments are 9 of 24 booked. Push appointments this week — every BDM should add 1 net-new appointment by Friday.</p></div><div class="tool-row"><a class="tool-launcher" href="https://dmedina5.github.io/coverages-by-state/" target="_blank" rel="noopener"><div class="tl-text"><div class="eyebrow">Live tool</div><h3>Coverages by State</h3><p>Check state availability, sub-coverages, and carrier routing</p></div><span class="tl-cta">Open &#8599;</span></a><a class="tool-launcher" href="https://docs.google.com/spreadsheets/d/1Qx3xFiOkCbCYzT2szuPXPFmKL4vRsHSg22CHFwX6p0c/edit" target="_blank" rel="noopener"><div class="tl-text"><div class="eyebrow">Live tool</div><h3>Underwriting Guide v4.0</h3><p>Carrier appetite, fleet size limits, deductibles, state exclusions</p></div><span class="tl-cta">Open &#8599;</span></a></div><div class="home-grid"><div><div class="panel"><h2>Top Reps — Composite Score</h2><table class="leaderboard"><thead><tr><th>#</th><th>Rep</th><th style="text-align:right">Score /100</th><th style="text-align:right">Q1 &rarr; Q2</th></tr></thead><tbody><tr><td class="rank">1</td><td class="name">Taylor Sloan<span class="role bda">BDA</span></td><td class="score">91</td><td><span class="delta flat">&mdash;</span></td></tr><tr><td class="rank">2</td><td class="name">Portia Lewis<span class="role bda">BDA</span></td><td class="score">86</td><td><span class="delta flat">&mdash;</span></td></tr><tr><td class="rank">3</td><td class="name">Erika Cabrera<span class="role bda">BDA</span></td><td class="score">79</td><td><span class="delta flat">&mdash;</span></td></tr><tr><td class="rank">4</td><td class="name">Cameron Brader<span class="role bda">BDA</span></td><td class="score">78</td><td><span class="delta down">&#9660; -18.5</span></td></tr><tr><td class="rank">5</td><td class="name">Derek Janssen<span class="role bdm">BDM</span></td><td class="score">78</td><td><span class="delta up">&#9650; +13.3</span></td></tr><tr><td class="rank">6</td><td class="name">Kurt Butterfield<span class="role bda">BDA</span></td><td class="score">78</td><td><span class="delta up">&#9650; +11.2</span></td></tr><tr><td class="rank">7</td><td class="name">Christopher Hayes<span class="role bdm">BDM</span></td><td class="score">69</td><td><span class="delta up">&#9650; +21.7</span></td></tr><tr><td class="rank">8</td><td class="name">Alexis Berry-Smith<span class="role bdm">BDM</span></td><td class="score">67</td><td><span class="delta flat">&mdash;</span></td></tr><tr><td class="rank">9</td><td class="name">Westy McLaughlin<span class="role bdm">BDM</span></td><td class="score">66</td><td><span class="delta up">&#9650; +15.1</span></td></tr><tr><td class="rank">10</td><td class="name">Ron Douglas<span class="role bdm">BDM</span></td><td class="score">61</td><td><span class="delta up">&#9650; +10.3</span></td></tr></tbody></table><div class="panel-foot"><a href="resources/dashboards.html">Open full scoreboard &rarr;</a></div></div></div><div><div class="panel hot-streak-panel"><h2>Hot Streak <span class="count">3+ weeks &ge; 100% activity</span></h2><ul class="streak-list"><li><div class="streak-name">Derek Janssen <span class="streak-role">BDM</span></div><div class="streak-weeks">6 weeks &ge; 100%</div></li><li><div class="streak-name">Derrick Leroy <span class="streak-role">BDM</span></div><div class="streak-weeks">6 weeks &ge; 100%</div></li></ul></div><div class="panel month-leaders-panel"><h2>Most Agency Appointments <span class="count">Q2</span></h2><ul class="month-leaders"><li><span class="ml-rank">1</span><span class="ml-name">Derek Janssen</span><span class="ml-count">5</span></li><li><span class="ml-rank">2</span><span class="ml-name">Christopher Hayes</span><span class="ml-count">2</span></li><li><span class="ml-rank">3</span><span class="ml-name">Ron Douglas</span><span class="ml-count">1</span></li><li><span class="ml-rank">4</span><span class="ml-name">Derrick Leroy</span><span class="ml-count">1</span></li></ul></div><div class="panel"><h2>Newest Appointed Agencies <span class="count">Q2 to date</span></h2><ul class="appt-list"><li><div class="appt-name">Marketers General Ins Agency Inc</div><div class="appt-meta">Derrick Leroy &middot; <span class="appt-when">16d ago</span></div></li><li><div class="appt-name">Phelan Insurance Agency Inc</div><div class="appt-meta">Cover Whale &middot; <span class="appt-when">17d ago</span></div></li><li><div class="appt-name">Thompson Northeast</div><div class="appt-meta">Cover Whale &middot; <span class="appt-when">17d ago</span></div></li><li><div class="appt-name">National Partner Referral - Melara Insurance Services</div><div class="appt-meta">Derek Janssen &middot; <span class="appt-when">21d ago</span></div></li><li><div class="appt-name">Tec Equipment</div><div class="appt-meta">Derek Janssen &middot; <span class="appt-when">24d ago</span></div></li><li><div class="appt-name">Amk Insurance Agency, Inc.</div><div class="appt-meta">Derek Janssen &middot; <span class="appt-when">24d ago</span></div></li><li><div class="appt-name">Mcdonald & Assoc Ins Agcy</div><div class="appt-meta">Derek Janssen &middot; <span class="appt-when">24d ago</span></div></li><li><div class="appt-name">Insurance Brokers of Maryland</div><div class="appt-meta">Christopher Hayes &middot; <span class="appt-when">34d ago</span></div></li><li><div class="appt-name">Crotty Insurance Agency Inc</div><div class="appt-meta">Christopher Hayes &middot; <span class="appt-when">34d ago</span></div></li><li><div class="appt-name">Alvix Insurance Group</div><div class="appt-meta">Ron Douglas &middot; <span class="appt-when">35d ago</span></div></li></ul></div></div></div>
+<div class="belts-row"><div class="belt-card"><div class="belt-medallion"><svg viewBox="0 0 108 54" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#FEF3C7"/>
+      <stop offset="45%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#92400E"/>
+    </linearGradient>
+    <linearGradient id="bl" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#451A03"/>
+      <stop offset="50%" stop-color="#7C2D12"/>
+      <stop offset="100%" stop-color="#1F0A02"/>
+    </linearGradient>
+  </defs>
+  <!-- Leather strap -->
+  <rect x="0" y="20" width="108" height="14" rx="2.5" fill="url(#bl)"/>
+  <!-- Stitching lines -->
+  <line x1="2" y1="22.5" x2="106" y2="22.5" stroke="#92400E" stroke-width="0.4" stroke-dasharray="1.5 1.5" opacity=".7"/>
+  <line x1="2" y1="31.5" x2="106" y2="31.5" stroke="#92400E" stroke-width="0.4" stroke-dasharray="1.5 1.5" opacity=".7"/>
+  <!-- Studs -->
+  <g fill="#FBBF24">
+    <circle cx="5"   cy="22.5" r="1"/><circle cx="5"   cy="31.5" r="1"/>
+    <circle cx="13"  cy="22.5" r="1"/><circle cx="13"  cy="31.5" r="1"/>
+    <circle cx="95"  cy="22.5" r="1"/><circle cx="95"  cy="31.5" r="1"/>
+    <circle cx="103" cy="22.5" r="1"/><circle cx="103" cy="31.5" r="1"/>
+  </g>
+  <!-- Side plate left -->
+  <rect x="22" y="13" width="12" height="28" rx="2" fill="url(#bg)" stroke="#7C4A02" stroke-width="0.7"/>
+  <circle cx="28" cy="27" r="2.5" fill="none" stroke="#92400E" stroke-width="0.5"/>
+  <!-- Side plate right -->
+  <rect x="74" y="13" width="12" height="28" rx="2" fill="url(#bg)" stroke="#7C4A02" stroke-width="0.7"/>
+  <circle cx="80" cy="27" r="2.5" fill="none" stroke="#92400E" stroke-width="0.5"/>
+  <!-- Center plate (large oval) -->
+  <ellipse cx="54" cy="27" rx="18" ry="18" fill="url(#bg)" stroke="#7C4A02" stroke-width="1.2"/>
+  <ellipse cx="54" cy="27" rx="14" ry="14" fill="none" stroke="#92400E" stroke-width="0.6"/>
+  <!-- Star burst behind text -->
+  <g opacity=".22" fill="#92400E">
+    <polygon points="54,15 55.2,24 64,25 55.2,28 54,39 52.8,28 44,25 52.8,24"/>
+  </g>
+  <!-- CW text on center plate -->
+  <text x="54" y="31" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif"
+        font-weight="900" font-size="11" fill="#3F2003" letter-spacing="-0.3">CW</text>
+  <!-- "Champion" mini-banner under center -->
+  <text x="54" y="48" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif"
+        font-weight="700" font-size="3.8" fill="#FBBF24" letter-spacing="0.6">CHAMPION</text>
+</svg></div><div class="belt-info"><div class="belt-eyebrow">Champion</div><div class="belt-name">Derek Janssen</div><div class="belt-meta">Q1 2026</div></div></div><div class="belt-card belt-card--vacant"><div class="belt-medallion"><svg viewBox="0 0 108 54" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#FEF3C7"/>
+      <stop offset="45%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#92400E"/>
+    </linearGradient>
+    <linearGradient id="bl" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#451A03"/>
+      <stop offset="50%" stop-color="#7C2D12"/>
+      <stop offset="100%" stop-color="#1F0A02"/>
+    </linearGradient>
+  </defs>
+  <!-- Leather strap -->
+  <rect x="0" y="20" width="108" height="14" rx="2.5" fill="url(#bl)"/>
+  <!-- Stitching lines -->
+  <line x1="2" y1="22.5" x2="106" y2="22.5" stroke="#92400E" stroke-width="0.4" stroke-dasharray="1.5 1.5" opacity=".7"/>
+  <line x1="2" y1="31.5" x2="106" y2="31.5" stroke="#92400E" stroke-width="0.4" stroke-dasharray="1.5 1.5" opacity=".7"/>
+  <!-- Studs -->
+  <g fill="#FBBF24">
+    <circle cx="5"   cy="22.5" r="1"/><circle cx="5"   cy="31.5" r="1"/>
+    <circle cx="13"  cy="22.5" r="1"/><circle cx="13"  cy="31.5" r="1"/>
+    <circle cx="95"  cy="22.5" r="1"/><circle cx="95"  cy="31.5" r="1"/>
+    <circle cx="103" cy="22.5" r="1"/><circle cx="103" cy="31.5" r="1"/>
+  </g>
+  <!-- Side plate left -->
+  <rect x="22" y="13" width="12" height="28" rx="2" fill="url(#bg)" stroke="#7C4A02" stroke-width="0.7"/>
+  <circle cx="28" cy="27" r="2.5" fill="none" stroke="#92400E" stroke-width="0.5"/>
+  <!-- Side plate right -->
+  <rect x="74" y="13" width="12" height="28" rx="2" fill="url(#bg)" stroke="#7C4A02" stroke-width="0.7"/>
+  <circle cx="80" cy="27" r="2.5" fill="none" stroke="#92400E" stroke-width="0.5"/>
+  <!-- Center plate (large oval) -->
+  <ellipse cx="54" cy="27" rx="18" ry="18" fill="url(#bg)" stroke="#7C4A02" stroke-width="1.2"/>
+  <ellipse cx="54" cy="27" rx="14" ry="14" fill="none" stroke="#92400E" stroke-width="0.6"/>
+  <!-- Star burst behind text -->
+  <g opacity=".22" fill="#92400E">
+    <polygon points="54,15 55.2,24 64,25 55.2,28 54,39 52.8,28 44,25 52.8,24"/>
+  </g>
+  <!-- CW text on center plate -->
+  <text x="54" y="31" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif"
+        font-weight="900" font-size="11" fill="#3F2003" letter-spacing="-0.3">CW</text>
+  <!-- "Champion" mini-banner under center -->
+  <text x="54" y="48" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif"
+        font-weight="700" font-size="3.8" fill="#FBBF24" letter-spacing="0.6">CHAMPION</text>
+</svg></div><div class="belt-info"><div class="belt-eyebrow">Cover Whale Belt #2</div><div class="belt-name">Up for grabs</div><div class="belt-meta">Criteria TBD</div></div></div></div><div class="focus-card"><div class="eyebrow">This Week's Focus</div><h3>Q2 close — 47 days left</h3><p>Activity sits at 80% of goal and Q2 appointments are 9 of 24 booked. Push appointments this week — every BDM should add 1 net-new appointment by Friday.</p></div><div class="tool-row"><a class="tool-launcher" href="https://dmedina5.github.io/coverages-by-state/" target="_blank" rel="noopener"><div class="tl-text"><div class="eyebrow">Live tool</div><h3>Coverages by State</h3><p>Check state availability, sub-coverages, and carrier routing</p></div><span class="tl-cta">Open &#8599;</span></a><a class="tool-launcher" href="https://docs.google.com/spreadsheets/d/1Qx3xFiOkCbCYzT2szuPXPFmKL4vRsHSg22CHFwX6p0c/edit" target="_blank" rel="noopener"><div class="tl-text"><div class="eyebrow">Live tool</div><h3>Underwriting Guide v4.0</h3><p>Carrier appetite, fleet size limits, deductibles, state exclusions</p></div><span class="tl-cta">Open &#8599;</span></a></div><div class="home-grid"><div><div class="panel"><h2>Top Reps — Composite Score</h2><table class="leaderboard"><thead><tr><th>#</th><th>Rep</th><th style="text-align:right">Score /100</th><th style="text-align:right">Q1 &rarr; Q2</th></tr></thead><tbody><tr><td class="rank">1</td><td class="name">Taylor Sloan<span class="role bda">BDA</span></td><td class="score">91</td><td><span class="delta flat">&mdash;</span></td></tr><tr><td class="rank">2</td><td class="name">Portia Lewis<span class="role bda">BDA</span></td><td class="score">86</td><td><span class="delta flat">&mdash;</span></td></tr><tr><td class="rank">3</td><td class="name">Erika Cabrera<span class="role bda">BDA</span></td><td class="score">79</td><td><span class="delta flat">&mdash;</span></td></tr><tr><td class="rank">4</td><td class="name">Cameron Brader<span class="role bda">BDA</span></td><td class="score">78</td><td><span class="delta down">&#9660; -18.5</span></td></tr><tr><td class="rank">5</td><td class="name">Derek Janssen<span class="role bdm">BDM</span></td><td class="score">78</td><td><span class="delta up">&#9650; +13.3</span></td></tr><tr><td class="rank">6</td><td class="name">Kurt Butterfield<span class="role bda">BDA</span></td><td class="score">78</td><td><span class="delta up">&#9650; +11.2</span></td></tr><tr><td class="rank">7</td><td class="name">Christopher Hayes<span class="role bdm">BDM</span></td><td class="score">69</td><td><span class="delta up">&#9650; +21.7</span></td></tr><tr><td class="rank">8</td><td class="name">Alexis Berry-Smith<span class="role bdm">BDM</span></td><td class="score">67</td><td><span class="delta flat">&mdash;</span></td></tr><tr><td class="rank">9</td><td class="name">Westy McLaughlin<span class="role bdm">BDM</span></td><td class="score">66</td><td><span class="delta up">&#9650; +15.1</span></td></tr><tr><td class="rank">10</td><td class="name">Ron Douglas<span class="role bdm">BDM</span></td><td class="score">61</td><td><span class="delta up">&#9650; +10.3</span></td></tr></tbody></table><div class="panel-foot"><a href="resources/dashboards.html">Open full scoreboard &rarr;</a></div></div></div><div><div class="panel hot-streak-panel"><h2>Hot Streak <span class="count">3+ weeks &ge; 100% activity</span></h2><ul class="streak-list"><li><div class="streak-name">Derek Janssen <span class="streak-role">BDM</span></div><div class="streak-weeks">6 weeks &ge; 100%</div></li><li><div class="streak-name">Derrick Leroy <span class="streak-role">BDM</span></div><div class="streak-weeks">6 weeks &ge; 100%</div></li></ul></div><div class="panel month-leaders-panel"><h2>Most Agency Appointments <span class="count">Q2</span></h2><ul class="month-leaders"><li><span class="ml-rank">1</span><span class="ml-name">Derek Janssen</span><span class="ml-count">5</span></li><li><span class="ml-rank">2</span><span class="ml-name">Christopher Hayes</span><span class="ml-count">2</span></li><li><span class="ml-rank">3</span><span class="ml-name">Ron Douglas</span><span class="ml-count">1</span></li><li><span class="ml-rank">4</span><span class="ml-name">Derrick Leroy</span><span class="ml-count">1</span></li></ul></div><div class="panel"><h2>Newest Appointed Agencies <span class="count">Q2 to date</span></h2><ul class="appt-list"><li><div class="appt-name">Marketers General Ins Agency Inc</div><div class="appt-meta">Derrick Leroy &middot; <span class="appt-when">16d ago</span></div></li><li><div class="appt-name">Phelan Insurance Agency Inc</div><div class="appt-meta">Cover Whale &middot; <span class="appt-when">17d ago</span></div></li><li><div class="appt-name">Thompson Northeast</div><div class="appt-meta">Cover Whale &middot; <span class="appt-when">17d ago</span></div></li><li><div class="appt-name">National Partner Referral - Melara Insurance Services</div><div class="appt-meta">Derek Janssen &middot; <span class="appt-when">21d ago</span></div></li><li><div class="appt-name">Tec Equipment</div><div class="appt-meta">Derek Janssen &middot; <span class="appt-when">24d ago</span></div></li><li><div class="appt-name">Amk Insurance Agency, Inc.</div><div class="appt-meta">Derek Janssen &middot; <span class="appt-when">24d ago</span></div></li><li><div class="appt-name">Mcdonald & Assoc Ins Agcy</div><div class="appt-meta">Derek Janssen &middot; <span class="appt-when">24d ago</span></div></li><li><div class="appt-name">Insurance Brokers of Maryland</div><div class="appt-meta">Christopher Hayes &middot; <span class="appt-when">34d ago</span></div></li><li><div class="appt-name">Crotty Insurance Agency Inc</div><div class="appt-meta">Christopher Hayes &middot; <span class="appt-when">34d ago</span></div></li><li><div class="appt-name">Alvix Insurance Group</div><div class="appt-meta">Ron Douglas &middot; <span class="appt-when">35d ago</span></div></li></ul></div></div></div>
 <h2>Verticals</h2>
 <div class="cards">
   <div class="card"><div class="eyebrow">Vertical</div><h3>Retail</h3><p>Retail broker playbooks, scorecards, and collateral.</p><a href="verticals/retail.html">Open Retail →</a></div>
