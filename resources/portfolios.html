@@ -197,12 +197,18 @@ table.leaderboard .delta.flat{color:var(--muted)}
 .focus-card .eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:.6px;color:#92400E;font-weight:700}
 .focus-card h3{margin:4px 0 4px;font-size:15px;color:#78350F}
 .focus-card p{margin:0;font-size:13px;color:#78350F}
-.appt-list{list-style:none;margin:0;padding:0}
-.appt-list li{padding:8px 0;border-bottom:1px solid #F3F4F6}
-.appt-list li:last-child{border-bottom:0}
-.appt-list .appt-name{font-size:13px;font-weight:600;color:var(--ink)}
+.appt-list{
+  list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px 12px
+}
+.appt-list li{
+  padding:10px 12px;border:1px solid var(--line);border-radius:8px;
+  background:var(--surface);min-width:0
+}
+.appt-list .appt-name{font-size:13px;font-weight:600;color:var(--ink);word-break:break-word}
 .appt-list .appt-meta{font-size:11px;color:var(--muted);margin-top:2px}
 .appt-list .appt-when{color:var(--accent);font-weight:600}
+@media (max-width:760px){.appt-list{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}}
 .hot-streak-panel{background:linear-gradient(135deg,#FFF7ED,#FED7AA);border:1px solid #FDBA74;padding:14px 18px}
 .hot-streak-panel h2{color:#7C2D12}
 .hot-streak-panel h2 .count{color:#9A3412}
@@ -323,7 +329,8 @@ table.leaderboard .delta.flat{color:var(--muted)}
   table.leaderboard .role.bda{background:#063B2D;color:#6EE7B7}
   table.leaderboard .score{color:var(--ink)}
   .kpi{background:#241836;border-color:#3B2566}
-  .recent-list li,.appt-list li,.month-leaders li{border-bottom-color:var(--line)}
+  .recent-list li,.month-leaders li{border-bottom-color:var(--line)}
+  .appt-list li{background:var(--surface);border-color:var(--line)}
   .actions a{background:#2D1B4F;color:#C4B5FD}
   .actions a:active{background:#3B2566}
   table.files th,table.files td{color:var(--ink)}
@@ -378,7 +385,7 @@ footer{padding:24px;text-align:center;color:var(--muted);font-size:11px;border-t
 <header class="bar">
   <div class="brand">Cover Whale &middot; Growth Sales Playbook</div>
   <nav><a href="../index.html" class="">Home</a><a href="../resources/dashboards.html" class="">Scoreboard</a><a href="../verticals/retail.html" class="">Retail</a><a href="../verticals/national_partners.html" class="">National Partners</a><a href="../verticals/networks.html" class="">Networks</a><a href="../verticals/fleet.html" class="">Fleet</a><a href="../resources/agency_appointments.html" class="">Agency Appointments</a><a href="../resources/portfolios.html" class="active">Portfolios</a><a href="../resources/marketing.html" class="">Marketing</a><a href="../resources/onboarding.html" class="">New Hire Onboarding</a><a href="../resources/reference.html" class="">Reference</a></nav>
-  <div class="meta">Built May 20, 2026 10:39 AM</div>
+  <div class="meta">Built May 20, 2026 10:43 AM</div>
 </header>
 <main class="wrap">
 <h1>Rep Portfolios</h1>
