@@ -2,11 +2,11 @@
 <html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>New Hire Onboarding — Cover Whale Sales Playbook</title>
+<title>New Hire Onboarding — The Orca</title>
 <meta name="theme-color" content="#1E073B">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="CW Playbook">
+<meta name="apple-mobile-web-app-title" content="The Orca">
 <link rel="manifest" href="../manifest.json">
 <link rel="icon" href="../icons/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
@@ -26,19 +26,21 @@ a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
 header.bar{
   background:var(--brand);color:#fff;padding:14px 24px;
-  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  display:flex;align-items:center;justify-content:flex-start;gap:24px;
   position:sticky;top:0;z-index:10;box-shadow:0 1px 4px rgba(0,0,0,.08)
 }
 .bar .brand{font-weight:700;font-size:17px;letter-spacing:.5px}
+.bar .brand-sub{font-weight:500;font-size:13px;color:#C4B5FD;letter-spacing:.3px;margin-left:4px}
 .bar nav{display:flex;gap:6px;flex-wrap:wrap}
 .bar nav a{
   color:#E9D5FF;padding:6px 10px;border-radius:6px;font-size:13px;font-weight:500
 }
 .bar nav a:hover{background:rgba(255,255,255,.08);text-decoration:none;color:#fff}
 .bar nav a.active{background:rgba(255,255,255,.15);color:#fff}
-.bar .meta{color:#C4B5FD;font-size:11px}
+.bar .meta{color:#C4B5FD;font-size:11px;margin-left:auto}
 .wrap{max-width:1280px;margin:0 auto;padding:24px}
 h1{font-size:24px;margin:4px 0 2px}
+.h1-sub{font-size:15px;color:var(--muted);font-weight:500;letter-spacing:.2px;margin-left:6px}
 h2{font-size:17px;margin:20px 0 10px;color:var(--brand)}
 h2 .count{color:var(--muted);font-weight:400;font-size:12px;margin-left:8px}
 .sub{color:var(--muted);font-size:13px;margin-bottom:12px}
@@ -121,6 +123,29 @@ table.leaderboard th{
 }
 table.leaderboard td{padding:8px 6px;border-bottom:1px solid #F3F4F6}
 table.leaderboard tr:last-child td{border-bottom:0}
+.leaderboard-split{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.leaderboard-sub{margin:0 0 8px;font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);font-weight:700}
+@media (max-width:760px){.leaderboard-split{grid-template-columns:1fr;gap:12px}}
+.ww-split{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.ww-sub{margin:0 0 8px;font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);font-weight:700}
+table.ww-table{width:100%;border-collapse:collapse;font-size:13px}
+table.ww-table th{
+  text-align:left;padding:6px 4px;color:var(--muted);font-size:10.5px;
+  text-transform:uppercase;letter-spacing:.4px;font-weight:600;border-bottom:1px solid var(--line)
+}
+table.ww-table td{padding:6px 4px;border-bottom:1px solid #F3F4F6}
+table.ww-table tr:last-child td{border-bottom:0}
+table.ww-table .rank{color:var(--muted);font-weight:700;width:24px;text-align:center}
+table.ww-table .state{font-weight:700;letter-spacing:.4px}
+table.ww-table .score{font-weight:700;color:var(--brand);text-align:right;white-space:nowrap}
+table.ww-table .binds{text-align:right;color:var(--muted);font-variant-numeric:tabular-nums;font-size:12px}
+.ww-mom{font-size:11px;font-weight:700;letter-spacing:.3px;display:inline-block;text-align:right;min-width:42px}
+.ww-mom.up{color:var(--pos)}
+.ww-mom.down{color:var(--neg)}
+.ww-mom.flat{color:var(--muted)}
+.ww-mom.new{color:var(--accent);font-size:10px;padding:1px 5px;border-radius:4px;background:#EDE9FE}
+.ww-foot{font-size:11px;color:var(--muted)}
+@media (max-width:760px){.ww-split{grid-template-columns:1fr;gap:12px}}
 table.leaderboard .rank{color:var(--muted);font-weight:700;width:28px;text-align:center}
 table.leaderboard .name{font-weight:600}
 table.leaderboard .role{
@@ -212,6 +237,20 @@ table.leaderboard .delta.flat{color:var(--muted)}
 .brief-card--pulse .brief-body strong{color:#FBBF24}
 .brief-card--pulse .down{color:#FCA5A5}
 .brief-card--pulse .up{color:#86EFAC}
+a.brief-card--portfolios{
+  display:flex;flex-direction:column;justify-content:space-between;
+  background:linear-gradient(135deg,#065F46 0%,#022C22 100%);
+  border-color:#047857;color:#fff;text-decoration:none;
+  transition:transform .15s ease, box-shadow .15s ease
+}
+a.brief-card--portfolios:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(4,120,87,.35)}
+.brief-card--portfolios .brief-eyebrow{color:#A7F3D0}
+.brief-portfolios-title{font-size:22px;font-weight:800;letter-spacing:-.2px;margin:2px 0 8px;color:#fff}
+.brief-card--portfolios .brief-body{color:#D1FAE5;font-size:13px}
+.brief-portfolios-cta{
+  margin-top:12px;align-self:flex-start;font-size:11px;font-weight:800;
+  letter-spacing:.4px;text-transform:uppercase;color:#A7F3D0
+}
 .brief-attrib{
   grid-column:1 / -1;font-size:10.5px;color:var(--muted);text-align:right;
   margin-top:-12px;letter-spacing:.3px
@@ -448,8 +487,8 @@ footer{padding:24px;text-align:center;color:var(--muted);font-size:11px;border-t
 <div id="cw-gate">
   <div class="box">
     <div class="logo">Cover Whale</div>
-    <h1>Growth Sales Playbook</h1>
-    <div class="sub">Internal access only</div>
+    <h1>The Orca</h1>
+    <div class="sub">Growth Sales Playbook &middot; Internal access only</div>
     <div class="form">
       <input id="cw-gate-pw" type="password" placeholder="Access code" autocomplete="off" autofocus>
       <button id="cw-gate-go">Enter</button>
@@ -461,9 +500,9 @@ footer{padding:24px;text-align:center;color:var(--muted);font-size:11px;border-t
 </div>
 
 <header class="bar">
-  <div class="brand">Cover Whale &middot; Growth Sales Playbook</div>
-  <nav><a href="../index.html" class="">Home</a><a href="../resources/dashboards.html" class="">Scoreboard</a><a href="../resources/distribution.html" class="">Distribution</a><a href="../verticals/retail.html" class="">Retail</a><a href="../verticals/national_partners.html" class="">National Partners</a><a href="../verticals/networks.html" class="">Networks</a><a href="../verticals/fleet.html" class="">Fleet</a><a href="../resources/agency_appointments.html" class="">Agency Appointments</a><a href="../resources/portfolios.html" class="">Portfolios</a><a href="../resources/marketing.html" class="">Marketing</a><a href="../resources/onboarding.html" class="active">New Hire Onboarding</a><a href="../resources/reference.html" class="">Reference</a></nav>
-  <div class="meta">Built May 28, 2026 05:34 AM</div>
+  <div class="brand">The Orca <span class="brand-sub">&middot; Growth Sales Playbook</span></div>
+  <nav><a href="https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fgeorgesoteropoulos-lgtm.github.io%2Fcw-sales-playbook%2Fgenerated%2FTeam%2FGrowth_Team_Org_Chart_V2.docx" class="">Growth Org Chart</a><a href="../resources/dashboards.html" class="">Scoreboard</a><a href="../resources/portfolios.html" class="">Portfolios</a></nav>
+  <div class="meta">Built May 28, 2026 02:26 PM</div>
 </header>
 <main class="wrap">
 <h1>New Hire Onboarding</h1>
