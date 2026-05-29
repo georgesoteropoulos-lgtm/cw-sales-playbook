@@ -146,6 +146,33 @@ table.ww-table .binds{text-align:right;color:var(--muted);font-variant-numeric:t
 .ww-mom.new{color:var(--accent);font-size:10px;padding:1px 5px;border-radius:4px;background:#EDE9FE}
 .ww-foot{font-size:11px;color:var(--muted)}
 @media (max-width:760px){.ww-split{grid-template-columns:1fr;gap:12px}}
+/* Yesterday's Top Binds ticker (scrolling marquee under the header) */
+.binds-ticker{
+  position:relative;overflow:hidden;background:linear-gradient(90deg,#5B21B6 0%,#7C3AED 100%);
+  color:#fff;border-radius:10px;margin:0 0 16px;padding:8px 0;
+  box-shadow:0 2px 8px rgba(91,33,182,.18);
+}
+.binds-ticker .bt-label{
+  position:absolute;left:0;top:0;bottom:0;display:flex;align-items:center;padding:0 14px;
+  background:#3F1F8C;font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;z-index:2;
+}
+.binds-ticker .bt-track{
+  display:flex;gap:28px;white-space:nowrap;padding-left:170px;
+  animation:bt-scroll 32s linear infinite;
+}
+.binds-ticker:hover .bt-track{animation-play-state:paused}
+.binds-ticker .bt-item{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:600}
+.binds-ticker .bt-prem{color:#FDE68A;font-weight:800;font-variant-numeric:tabular-nums}
+.binds-ticker .bt-rep{opacity:.85;font-weight:500;font-style:italic}
+.binds-ticker .bt-sep{opacity:.5}
+@keyframes bt-scroll{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(-50%)}
+}
+@media (max-width:760px){
+  .binds-ticker .bt-label{font-size:9px;padding:0 8px}
+  .binds-ticker .bt-track{padding-left:120px;animation-duration:24s}
+}
 table.leaderboard .rank{color:var(--muted);font-weight:700;width:28px;text-align:center}
 table.leaderboard .name{font-weight:600}
 table.leaderboard .role{
@@ -457,6 +484,15 @@ a.brief-card--portfolios:hover{transform:translateY(-1px);box-shadow:0 6px 18px 
   header.bar{background:#15082E;box-shadow:0 1px 4px rgba(0,0,0,.4)}
 }
 footer{padding:24px;text-align:center;color:var(--muted);font-size:11px;border-top:1px solid var(--line);margin-top:40px}
+.back-home{display:flex;justify-content:center;margin:40px 0 0}
+.back-home a{
+  display:inline-flex;align-items:center;gap:8px;padding:10px 22px;
+  background:var(--brand);color:#fff;text-decoration:none;
+  border-radius:8px;font-weight:700;font-size:14px;letter-spacing:.3px;
+  box-shadow:0 2px 8px rgba(91,33,182,.25);transition:transform .12s,box-shadow .12s;
+}
+.back-home a:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(91,33,182,.32)}
+.back-home a:active{transform:translateY(0)}
 
 
 #cw-gate{position:fixed;inset:0;background:#1E073B;color:#fff;z-index:9999;display:flex;align-items:center;justify-content:center;font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif}
@@ -501,8 +537,8 @@ footer{padding:24px;text-align:center;color:var(--muted);font-size:11px;border-t
 
 <header class="bar">
   <div class="brand">The Orca <span class="brand-sub">&middot; Growth Sales Playbook</span></div>
-  <nav><a href="https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fgeorgesoteropoulos-lgtm.github.io%2Fcw-sales-playbook%2Fgenerated%2FTeam%2FGrowth_Team_Org_Chart_V2.docx" class="">Growth Org Chart</a><a href="../resources/dashboards.html" class="">Scoreboard</a><a href="../resources/portfolios.html" class="">Portfolios</a></nav>
-  <div class="meta">Built May 28, 2026 02:26 PM</div>
+  <nav><a href="../index.html" class="">Home</a><a href="https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fgeorgesoteropoulos-lgtm.github.io%2Fcw-sales-playbook%2Fgenerated%2FTeam%2FGrowth_Team_Org_Chart_V2.docx" class="">Growth Org Chart</a><a href="../resources/dashboards.html" class="">Scoreboard</a><a href="../resources/portfolios.html" class="">Portfolios</a></nav>
+  <div class="meta">Built May 29, 2026 12:41 AM</div>
 </header>
 <main class="wrap">
 <h1>Distribution</h1>
@@ -510,6 +546,7 @@ footer{padding:24px;text-align:center;color:var(--muted);font-size:11px;border-t
 <p class="sub" style="margin-bottom:12px">Daily growth reports built by <strong>Cory Arnette</strong> and published to <a href="https://carnette88.github.io/cw-reports/" target="_blank" rel="noopener">carnette88.github.io/cw-reports</a>. Same Cover Whale access code.</p>
 <h2>Cory's Daily Reports<span class="count">(8 items)</span></h2><div class="cards"><div class="card"><div class="eyebrow">Deck</div><h3>Production vs Budget — Morning Hub</h3><p>Headlines, MoM/YoY, daily target, submission pipeline, top states & agencies</p><a href="https://carnette88.github.io/cw-reports/morning/" target="_blank">Open →</a></div><div class="card"><div class="eyebrow">Deck</div><h3>Morning · Retail</h3><p>Retail vertical drill-down</p><a href="https://carnette88.github.io/cw-reports/morning/retail/" target="_blank">Open →</a></div><div class="card"><div class="eyebrow">Deck</div><h3>Morning · Networks</h3><p>Networks vertical drill-down</p><a href="https://carnette88.github.io/cw-reports/morning/networks/" target="_blank">Open →</a></div><div class="card"><div class="eyebrow">Deck</div><h3>Morning · National Partners</h3><p>National Partners vertical drill-down</p><a href="https://carnette88.github.io/cw-reports/morning/np/" target="_blank">Open →</a></div><div class="card"><div class="eyebrow">Deck</div><h3>Industry Brief</h3><p>Trucking + insurance industry signal</p><a href="https://carnette88.github.io/cw-reports/industry-brief/" target="_blank">Open →</a></div><div class="card"><div class="eyebrow">Deck</div><h3>Agency Flags</h3><p>Agencies with notable signals worth attention</p><a href="https://carnette88.github.io/cw-reports/agency-flags/" target="_blank">Open →</a></div><div class="card"><div class="eyebrow">Deck</div><h3>Strategic Pulse</h3><p>Higher-level strategic read</p><a href="https://carnette88.github.io/cw-reports/strategic-pulse/" target="_blank">Open →</a></div><div class="card"><div class="eyebrow">Deck</div><h3>Vibes</h3><p>Qualitative read of the team / market</p><a href="https://carnette88.github.io/cw-reports/vibes/" target="_blank">Open →</a></div></div>
 <div class="empty"><div class="big">~</div>Drop files into <code>Sales Playbook/content/Distribution/</code> on Drive. Use subfolders to organize.</div>
+<div class="back-home"><a href="../index.html">&larr; Back to Home</a></div>
 </main>
 <footer>Cover Whale Growth Team &middot; Built by build_playbook.py &middot; Refreshed daily at 5 AM CT</footer>
 <script>
